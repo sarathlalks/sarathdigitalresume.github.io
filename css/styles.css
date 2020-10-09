@@ -32,7 +32,7 @@ a:hover {
 }
 
 h1 {
-    font-size: 100px;
+    font-size: 70px;
     line-height: 1;
 }
 
@@ -62,7 +62,6 @@ h3 {
 
 header .content-wrap {
     position: relative;
-    width: 100%;
     height: 100vh;
     padding: 5em 2em;
     text-align: center;
@@ -72,7 +71,7 @@ header .content-wrap {
     max-width: 800px;
     width: 85%;
     margin: 0 auto;
-    padding: 10em 0;
+    padding: 5em 0;
 }
 
 .divider>section {
@@ -314,13 +313,9 @@ footer {
     }
     header .content-wrap {
         position: relative;
-        width: 100%;
         height: 100vh;
         padding: 10em 2em;
         text-align: left;
-    }
-    header .content-wrap p {
-        width: 450px;
     }
     .main-navi {
         background-color: #2028a5;
@@ -372,6 +367,14 @@ footer {
     .main-navi li:first-of-type {
         flex-grow: 6;
     }
+    .cd-words-wrapper {
+        display: inline-block;
+        position: relative;
+        text-align: left !important;
+    }
+    .content-wrap p {
+        width: 400px;
+    }
 }
 
 @media screen and (max-width:749px) {
@@ -385,6 +388,102 @@ footer {
         font-size: 100px;
     }
     header h2 {
-        font-size: 45px;
+        font-size: 30px;
+    }
+}
+
+.cd-title {
+    position: relative;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+
+.cd-filter {
+    text-align: center;
+}
+
+.cd-filter li {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+}
+
+.cd-words-wrapper {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+
+.cd-words-wrapper b {
+    display: inline-block;
+    position: absolute;
+    white-space: nowrap;
+    left: 0;
+    top: 0;
+    font-weight: 400;
+}
+
+.cd-words-wrapper b.is-visible {
+    position: relative;
+}
+
+
+/* -------------------------------- 
+  
+  xslide 
+  
+  -------------------------------- */
+
+.cd-headline.slide span {
+    display: inline-block;
+}
+
+.cd-headline.slide .cd-words-wrapper {
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.cd-headline.slide b {
+    opacity: 0;
+}
+
+.cd-headline.slide b.is-visible {
+    top: 0;
+    opacity: 1;
+    animation: slide-in 0.6s;
+}
+
+.cd-headline.slide b.is-hidden {
+    animation: slide-out 0.6s;
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    60% {
+        opacity: 0;
+        transform: translateY(120%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100%);
     }
 }
